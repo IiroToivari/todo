@@ -1,4 +1,4 @@
-import { selectAllTasks, insertTask, deleteTaskById } from '../models/Task.js'
+import { selectAllTasks, insertTask, deleteTaskById } from '../models/Tasks.js'
 import {ApiError} from '../helper/ApiError.js'
 
 export const getTasks = async (req, res,next) => {
@@ -12,7 +12,6 @@ export const getTasks = async (req, res,next) => {
 export const postTask = async (req, res, next) => {
   const { task } = req.body
   console.log("Task to create:", task)
-
   try {
     if (!task || !task.description || task.description.trim().length === 0) {
       
@@ -44,5 +43,5 @@ export const deleteTask = async (req, res, next) => {
   }
 }
 
-export { getTasks, postTask, deleteTask }
+
 
